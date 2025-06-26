@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transmisiones en Vivo | Sport Center</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="grid-container">
+
+        <!-- Header consistente -->
+        <header class="header sticky-top">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="img/logo.png" alt="Logo Sport Center" class="logo-img">
+                    </a>
+                    
+                    <div class="d-flex align-items-center">
+                        
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">                
+                            <li class="nav-item"><a class="nav-link" href="index.html">INICIO</a></li>
+                            <li class="nav-item"><a class="nav-link" href="ligas.html">LIGAS</a></li>
+                            <li class="nav-item"><a class="nav-link" href="estadisticas.html">ESTADÍSTICAS</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="transmisiones.html">TRANSMISIONES</a></li>
+                            <li class="nav-item"><a class="nav-link btn-subscribe" href="suscribir.html" id="btnSuscribir">SUSCRIBIRSE</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Hero Section para Transmisiones -->
+        <section class="streaming-hero">
+            <div class="hero-content">
+                <h1>Transmisiones en Vivo</h1>
+                <p class="lead">No te pierdas ningún partido de tus equipos favoritos</p>
+                <div class="streaming-filter">
+                    <select class="form-select" id="leagueFilter">
+                        <option value="all">Todas las ligas</option>
+                        <option value="premier">Premier League</option>
+                        <option value="laliga">La Liga</option>
+                        <option value="seriea">Serie A</option>
+                        <option value="bundesliga">Bundesliga</option>
+                        <option value="ligue1">Ligue 1</option>
+                    </select>
+                    <select class="form-select" id="dateFilter">
+                        <option value="today">Hoy</option>
+                        <option value="tomorrow">Mañana</option>
+                        <option value="week">Esta semana</option>
+                    </select>
+                </div>
+            </div>
+         
+<div class="youtube-player-container">
+    <iframe class="youtube-embed" 
+            src="https://www.youtube.com/embed/mSIwFRlO8P8?si=u19ijlFXtYQKRzMd&amp;controls=0&amp;start=4" 
+            title="YouTube video player" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+    </iframe>
+</div>
+        </section>
+
+        <!-- Contenedor principal de transmisiones -->
+        <main class="streaming-container">
+            <div class="container">
+                <!-- Partidos en vivo -->
+                <section class="live-matches">
+                    <h2 class="section-title">
+                        <i class="fas fa-circle live-icon"></i> Partidos en Directo
+                        <span class="badge bg-danger">EN VIVO</span>
+                    </h2>
+                    
+                    <div class="row g-4">
+                        <!-- Partido 1 -->
+                        <div class="col-md-6">
+                            <div class="match-card live">
+                                <div class="match-header">
+                                    <div class="league-info">
+                                        <img src="img/laliga.png" alt="La Liga" class="league-logo">
+                                        <span>La Liga - Jornada 28</span>
+                                    </div>
+                                    <div class="match-time">
+                                        <span class="live-badge">EN VIVO</span>
+                                        <span>Min. 63'</span>
+                                    </div>
+                                </div>
+                                <div class="teams">
+                                    <div class="team">
+                                        <img src="img/realmadrid.png" alt="Real Madrid" class="team-logo">
+                                        <span>Real Madrid</span>
+                                        <span class="score">2</span>
+                                    </div>
+                                    <div class="vs">VS</div>
+                                    <div class="team">
+                                        <img src="img/barcelona.png" alt="Barcelona" class="team-logo">
+                                        <span>Barcelona</span>
+                                        <span class="score">1</span>
+                                    </div>
+                                </div>
+                                <div class="match-actions">
+                                    <a href="#" class="btn btn-danger btn-watch">
+                                        <i class="fas fa-play"></i> Ver Ahora
+                                    </a>
+                                    <button class="btn btn-outline-secondary btn-reminder">
+                                        <i class="far fa-bell"></i> Recordar
+                                    </button>
+                                </div>
+                                <div class="match-info">
+                                    <p><i class="far fa-clock"></i> 21:00 (Hora local) | <i class="fas fa-tv"></i> ESPN Deportes</p>
+                                    <p><i class="fas fa-map-marker-alt"></i> Santiago Bernabéu, Madrid</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Partido 2 -->
+                        <div class="col-md-6">
+                            <div class="match-card live">
+                                <div class="match-header">
+                                    <div class="league-info">
+                                        <img src="img/premier.png" alt="Premier League" class="league-logo">
+                                        <span>Premier League - Jornada 30</span>
+                                    </div>
+                                    <div class="match-time">
+                                        <span class="live-badge">EN VIVO</span>
+                                        <span>Min. 45'</span>
+                                    </div>
+                                </div>
+                                <div class="teams">
+                                    <div class="team">
+                                        <img src="img/mancity.png" alt="Manchester City" class="team-logo">
+                                        <span>Manchester City</span>
+                                        <span class="score">1</span>
+                                    </div>
+                                    <div class="vs">VS</div>
+                                    <div class="team">
+                                        <img src="img/liverpool.png" alt="Liverpool" class="team-logo">
+                                        <span>Liverpool</span>
+                                        <span class="score">1</span>
+                                    </div>
+                                </div>
+                                <div class="match-actions">
+                                    <a href="#" class="btn btn-danger btn-watch">
+                                        <i class="fas fa-play"></i> Ver Ahora
+                                    </a>
+                                    <button class="btn btn-outline-secondary btn-reminder">
+                                        <i class="far fa-bell"></i> Recordar
+                                    </button>
+                                </div>
+                                <div class="match-info">
+                                    <p><i class="far fa-clock"></i> 18:30 (Hora local) | <i class="fas fa-tv"></i> Fox Sports</p>
+                                    <p><i class="fas fa-map-marker-alt"></i> Etihad Stadium, Manchester</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Próximos partidos -->
+                <section class="upcoming-matches">
+                    <h2 class="section-title">
+                        <i class="far fa-calendar-alt"></i> Próximos Partidos
+                    </h2>
+                    
+                    <div class="schedule-tabs">
+                        <ul class="nav nav-tabs" id="scheduleTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="today-tab" data-bs-toggle="tab" data-bs-target="#today" type="button" role="tab">Hoy</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="tomorrow-tab" data-bs-toggle="tab" data-bs-target="#tomorrow" type="button" role="tab">Mañana</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="week-tab" data-bs-toggle="tab" data-bs-target="#week" type="button" role="tab">Esta Semana</button>
+                            </li>
+                        </ul>
+                        
+                        <div class="tab-content" id="scheduleTabContent">
+                            <!-- Hoy -->
+                            <div class="tab-pane fade show active" id="today" role="tabpanel">
+                                <div class="match-list">
+                                    <div class="match-item">
+                                        <div class="teams">
+                                            <div class="team">
+                                                <img src="img/bayern.png" alt="Bayern Munich" class="team-logo-sm">
+                                                <span>Bayern Munich</span>
+                                            </div>
+                                            <div class="vs">vs</div>
+                                            <div class="team">
+                                                <img src="img/dortmund.png" alt="Dortmund" class="team-logo-sm">
+                                                <span>Dortmund</span>
+                                            </div>
+                                        </div>
+                                        <div class="match-details">
+                                            <span class="league">Bundesliga</span>
+                                            <span class="time"><i class="far fa-clock"></i> 20:30</span>
+                                            <span class="channel"><i class="fas fa-tv"></i> ESPN 2</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary btn-reminder-sm">
+                                            <i class="far fa-bell"></i>
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="match-item">
+                                        <div class="teams">
+                                            <div class="team">
+                                                <img src="img/psg.png" alt="PSG" class="team-logo-sm">
+                                                <span>PSG</span>
+                                            </div>
+                                            <div class="vs">vs</div>
+                                            <div class="team">
+                                                <img src="img/marsella.png" alt="Marseille" class="team-logo-sm">
+                                                <span>Marseille</span>
+                                            </div>
+                                        </div>
+                                        <div class="match-details">
+                                            <span class="league">Ligue 1</span>
+                                            <span class="time"><i class="far fa-clock"></i> 22:00</span>
+                                            <span class="channel"><i class="fas fa-tv"></i> beIN Sports</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary btn-reminder-sm">
+                                            <i class="far fa-bell"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Mañana -->
+                            <div class="tab-pane fade" id="tomorrow" role="tabpanel">
+                                <div class="match-list">
+                                    <div class="match-item">
+                                        <div class="teams">
+                                            <div class="team">
+                                                <img src="img/juventus.png" alt="Juventus" class="team-logo-sm">
+                                                <span>Juventus</span>
+                                            </div>
+                                            <div class="vs">vs</div>
+                                            <div class="team">
+                                                <img src="img/inter.png" alt="Inter" class="team-logo-sm">
+                                                <span>Inter</span>
+                                            </div>
+                                        </div>
+                                        <div class="match-details">
+                                            <span class="league">Serie A</span>
+                                            <span class="time"><i class="far fa-clock"></i> 19:45</span>
+                                            <span class="channel"><i class="fas fa-tv"></i> DAZN</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary btn-reminder-sm">
+                                            <i class="far fa-bell"></i>
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="match-item">
+                                        <div class="teams">
+                                            <div class="team">
+                                                <img src="img/chelsea.png" alt="Chelsea" class="team-logo-sm">
+                                                <span>Chelsea</span>
+                                            </div>
+                                            <div class="vs">vs</div>
+                                            <div class="team">
+                                                <img src="img/arsenal.png" alt="Arsenal" class="team-logo-sm">
+                                                <span>Arsenal</span>
+                                            </div>
+                                        </div>
+                                        <div class="match-details">
+                                            <span class="league">Premier League</span>
+                                            <span class="time"><i class="far fa-clock"></i> 17:30</span>
+                                            <span class="channel"><i class="fas fa-tv"></i> Sky Sports</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary btn-reminder-sm">
+                                            <i class="far fa-bell"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Esta semana -->
+                            <div class="tab-pane fade" id="week" role="tabpanel">
+                                <div class="week-schedule">
+                                    <div class="day-matches">
+                                        <h4>Lunes</h4>
+                                        <div class="match-item">
+                                            <div class="teams">
+                                                <span>Valencia vs Sevilla</span>
+                                            </div>
+                                            <div class="match-details">
+                                                <span class="time">21:00</span>
+                                                <span class="channel">Movistar+</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="day-matches">
+                                        <h4>Miércoles</h4>
+                                        <div class="match-item">
+                                            <div class="teams">
+                                                <span>AC Milan vs Roma</span>
+                                            </div>
+                                            <div class="match-details">
+                                                <span class="time">20:45</span>
+                                                <span class="channel">DAZN</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="day-matches">
+                                        <h4>Viernes</h4>
+                                        <div class="match-item">
+                                            <div class="teams">
+                                                <span>Lyon vs Monaco</span>
+                                            </div>
+                                            <div class="match-details">
+                                                <span class="time">22:00</span>
+                                                <span class="channel">beIN Sports</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Plataformas de transmisión -->
+                <section class="streaming-platforms">
+                    <h2 class="section-title">
+                        <i class="fas fa-satellite-dish"></i> Plataformas de Transmisión
+                    </h2>
+                    
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="platform-card">
+                                <div class="platform-logo">
+                                    <img src="img/espn.png" alt="ESPN">
+                                </div>
+                                <h3>ESPN</h3>
+                                <p class="platform-description">Partidos exclusivos de La Liga, Bundesliga y Copa del Rey</p>
+                                <div class="platform-features">
+                                    <p><i class="fas fa-check"></i> Transmisiones en HD</p>
+                                    <p><i class="fas fa-check"></i> Análisis previo y posterior</p>
+                                    <p><i class="fas fa-check"></i> Comentario en español</p>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary">Ver Planes</a>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="platform-card">
+                                <div class="platform-logo">
+                                    <img src="img/foxsports.png" alt="Fox Sports">
+                                </div>
+                                <h3>Fox Sports</h3>
+                                <p class="platform-description">Cobertura completa de la Premier League y Champions League</p>
+                                <div class="platform-features">
+                                    <p><i class="fas fa-check"></i> Multi-cámara interactiva</p>
+                                    <p><i class="fas fa-check"></i> Estadísticas en tiempo real</p>
+                                    <p><i class="fas fa-check"></i> Opción de audio original</p>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary">Ver Planes</a>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="platform-card">
+                                <div class="platform-logo">
+                                    <img src="img/dazn.png" alt="DAZN">
+                                </div>
+                                <h3>DAZN</h3>
+                                <p class="platform-description">Todos los partidos de la Serie A y partidos seleccionados de otras ligas</p>
+                                <div class="platform-features">
+                                    <p><i class="fas fa-check"></i> Transmisión 4K disponible</p>
+                                    <p><i class="fas fa-check"></i> Repeticiones bajo demanda</p>
+                                    <p><i class="fas fa-check"></i> Dispositivos ilimitados</p>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary">Ver Planes</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Guía de canales -->
+                <section class="channel-guide">
+                    <h2 class="section-title">
+                        <i class="fas fa-tv"></i> Guía de Canales
+                    </h2>
+                    
+                    <div class="channel-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Buscar canal..." id="channelSearch">
+                            <button class="btn btn-search" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="channel-list">
+                        <div class="channel-item">
+                            <img src="img/espn.png" alt="ESPN" class="channel-logo">
+                            <div class="channel-info">
+                                <h4>ESPN</h4>
+                                <p>Cobertura: La Liga, Bundesliga, Eredivisie</p>
+                                <p>Paquetes: Claro Sports, Sky, DirecTV</p>
+                            </div>
+                            <span class="channel-number">610</span>
+                        </div>
+                        
+                        <div class="channel-item">
+                            <img src="img/foxsports.png" alt="Fox Sports" class="channel-logo">
+                            <div class="channel-info">
+                                <h4>Fox Sports</h4>
+                                <p>Cobertura: Premier League, Champions League</p>
+                                <p>Paquetes: Sky, Izzi, Totalplay</p>
+                            </div>
+                            <span class="channel-number">615</span>
+                        </div>
+                        
+                        <div class="channel-item">
+                            <img src="img/dazn.png" alt="DAZN" class="channel-logo">
+                            <div class="channel-info">
+                                <h4>DAZN</h4>
+                                <p>Cobertura: Serie A, Liga Portuguesa</p>
+                                <p>Suscripción independiente</p>
+                            </div>
+                            <span class="channel-number">-</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+      <footer>
+            <div class="footer-bar">
+                <p>&copy; 2025 Todos los derechos reservados - Sport Center</p>
+                <div class="footer-legal">
+                    <a href="#">Términos y condiciones</a>
+                    <a href="#">Política de privacidad</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

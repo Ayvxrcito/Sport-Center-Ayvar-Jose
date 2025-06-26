@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ligas de Fútbol | Sport Center</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="grid-container">
+
+       
+        <header class="header sticky-top">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="img/logo.png" alt="Logo Sport Center" class="logo-img">
+                    </a>
+                    
+                    <div class="d-flex align-items-center">
+                        
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">                
+                            <li class="nav-item"><a class="nav-link" href="index.html">INICIO</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="ligas.html">LIGAS</a></li>
+                            <li class="nav-item"><a class="nav-link" href="estadisticas.html">ESTADÍSTICAS</a></li>
+                            <li class="nav-item"><a class="nav-link" href="transmisiones.html">TRANSMISIONES</a></li>
+                            <li class="nav-item"><a class="nav-link btn-subscribe" href="suscribir.html" id="btnSuscribir">SUSCRIBIRSE</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+       
+        <section class="league-hero">
+            <div class="hero-content">
+                <h1>Principales Ligas del Mundo</h1>
+                <p class="lead">Información actualizada de las mejores competiciones de fútbol</p>
+                <a href="#ligas-container" class="btn btn-explore">Explorar Ligas <i class="fas fa-arrow-down"></i></a>
+            </div>
+            <div class="hero-image">
+                <img src="img/ligas.jpg" alt="Imagen de ligas" class="img-fluid">
+            </div>
+        </section>
+
+        
+        <main class="ligas-container" id="ligas-container">
+            <div class="container">
+                
+                <div class="league-filter mb-5">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Buscar liga..." id="leagueSearch">
+                        <button class="btn btn-search" type="button"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="filter-buttons mt-3">
+                        <button class="btn btn-filter active" data-filter="all">Todas</button>
+                        <button class="btn btn-filter" data-filter="europe">Europa</button>
+                        <button class="btn btn-filter" data-filter="america">América</button>
+                        <button class="btn btn-filter" data-filter="asia">Asia</button>
+                    </div>
+                </div>
+
+                
+                <div class="row g-4 league-grid">
+                  
+                    <div class="col-md-6 col-lg-4" data-region="europe">
+                        <div class="league-card">
+                            <div class="league-header">
+                                <img src="img//premier.png" alt="Premier League" class="league-logo">
+                                <h3>Premier League</h3>
+                                <span class="league-country"><i class="fas fa-map-marker-alt"></i> Inglaterra</span>
+                            </div>
+                            <div class="league-body">
+                                <div class="league-info">
+                                    <p><strong>Fundación:</strong> 1992</p>
+                                    <p><strong>Equipos:</strong> 20</p>
+                                    <p><strong>Último campeón:</strong> Manchester City</p>
+                                    <p><strong>Máximo goleador:</strong> Alan Shearer (260 goles)</p>
+                                </div>
+                                <div class="league-actions">
+                                    <a href="#" class="btn btn-outline-primary btn-sm">Ver equipos</a>
+                                    <a href="#" class="btn btn-outline-danger btn-sm">Calendario</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+                    <div class="col-md-6 col-lg-4" data-region="europe">
+                        <div class="league-card">
+                            <div class="league-header">
+                                <img src="img/laliga.png" alt="La Liga" class="league-logo">
+                                <h3>La Liga</h3>
+                                <span class="league-country"><i class="fas fa-map-marker-alt"></i> España</span>
+                            </div>
+                            <div class="league-body">
+                                <div class="league-info">
+                                    <p><strong>Fundación:</strong> 1929</p>
+                                    <p><strong>Equipos:</strong> 20</p>
+                                    <p><strong>Último campeón:</strong> Real Madrid</p>
+                                    <p><strong>Máximo goleador:</strong> Lionel Messi (474 goles)</p>
+                                </div>
+                                <div class="league-actions">
+                                    <a href="#" class="btn btn-outline-primary btn-sm">Ver equipos</a>
+                                    <a href="#" class="btn btn-outline-danger btn-sm">Calendario</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="col-md-6 col-lg-4" data-region="europe">
+                        <div class="league-card">
+                            <div class="league-header">
+                                <img src="img/seriea.png" alt="Serie A" class="league-logo">
+                                <h3>Serie A</h3>
+                                <span class="league-country"><i class="fas fa-map-marker-alt"></i> Italia</span>
+                            </div>
+                            <div class="league-body">
+                                <div class="league-info">
+                                    <p><strong>Fundación:</strong> 1898</p>
+                                    <p><strong>Equipos:</strong> 20</p>
+                                    <p><strong>Último campeón:</strong> Inter de Milán</p>
+                                    <p><strong>Máximo goleador:</strong> Silvio Piola (274 goles)</p>
+                                </div>
+                                <div class="league-actions">
+                                    <a href="#" class="btn btn-outline-primary btn-sm">Ver equipos</a>
+                                    <a href="#" class="btn btn-outline-danger btn-sm">Calendario</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+                    <div class="col-md-6 col-lg-4" data-region="europe">
+                        <div class="league-card">
+                            <div class="league-header">
+                                <img src="img/bundesliga.png" alt="Bundesliga" class="league-logo">
+                                <h3>Bundesliga</h3>
+                                <span class="league-country"><i class="fas fa-map-marker-alt"></i> Alemania</span>
+                            </div>
+                            <div class="league-body">
+                                <div class="league-info">
+                                    <p><strong>Fundación:</strong> 1963</p>
+                                    <p><strong>Equipos:</strong> 18</p>
+                                    <p><strong>Último campeón:</strong> Bayer Leverkusen</p>
+                                    <p><strong>Máximo goleador:</strong> Gerd Müller (365 goles)</p>
+                                </div>
+                                <div class="league-actions">
+                                    <a href="#" class="btn btn-outline-primary btn-sm">Ver equipos</a>
+                                    <a href="#" class="btn btn-outline-danger btn-sm">Calendario</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+                    <div class="col-md-6 col-lg-4" data-region="europe">
+                        <div class="league-card">
+                            <div class="league-header">
+                                <img src="img/lige1.png" alt="Ligue 1" class="league-logo">
+                                <h3>Ligue 1</h3>
+                                <span class="league-country"><i class="fas fa-map-marker-alt"></i> Francia</span>
+                            </div>
+                            <div class="league-body">
+                                <div class="league-info">
+                                    <p><strong>Fundación:</strong> 1932</p>
+                                    <p><strong>Equipos:</strong> 18</p>
+                                    <p><strong>Último campeón:</strong> Paris Saint-Germain</p>
+                                    <p><strong>Máximo goleador:</strong> Delio Onnis (299 goles)</p>
+                                </div>
+                                <div class="league-actions">
+                                    <a href="#" class="btn btn-outline-primary btn-sm">Ver equipos</a>
+                                    <a href="#" class="btn btn-outline-danger btn-sm">Calendario</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="col-md-6 col-lg-4" data-region="america">
+                        <div class="league-card">
+                            <div class="league-header">
+                                <img src="img/ligamx.png" alt="Liga MX" class="league-logo">
+                                <h3>Liga MX</h3>
+                                <span class="league-country"><i class="fas fa-map-marker-alt"></i> México</span>
+                            </div>
+                            <div class="league-body">
+                                <div class="league-info">
+                                    <p><strong>Fundación:</strong> 1943</p>
+                                    <p><strong>Equipos:</strong> 18</p>
+                                    <p><strong>Último campeón:</strong> América</p>
+                                    <p><strong>Máximo goleador:</strong> Evanivaldo Castro (312 goles)</p>
+                                </div>
+                                <div class="league-actions">
+                                    <a href="#" class="btn btn-outline-primary btn-sm">Ver equipos</a>
+                                    <a href="#" class="btn btn-outline-danger btn-sm">Calendario</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <section class="upcoming-matches mt-5">
+                    <h2 class="section-title">Próximos Partidos Destacados</h2>
+                    <div class="matches-grid">
+                        <div class="match-card">
+                            <div class="teams">
+                                <div class="team">
+                                    <img src="img/mancity.png" alt="Manchester City">
+                                    <span>Manchester City</span>
+                                </div>
+                                <div class="vs">VS</div>
+                                <div class="team">
+                                    <img src="img/liverpool.png" alt="Liverpool">
+                                    <span>Liverpool</span>
+                                </div>
+                            </div>
+                            <div class="match-info">
+                                <p><i class="far fa-calendar-alt"></i> 10 Nov 2025</p>
+                                <p><i class="far fa-clock"></i> 17:30 GMT</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Etihad Stadium</p>
+                            </div>
+                        </div>
+                        
+                        <div class="match-card">
+                            <div class="teams">
+                                <div class="team">
+                                    <img src="img/realmadrid.png" alt="Real Madrid">
+                                    <span>Real Madrid</span>
+                                </div>
+                                <div class="vs">VS</div>
+                                <div class="team">
+                                    <img src="img/barcelona.png" alt="Barcelona">
+                                    <span>Barcelona</span>
+                                </div>
+                            </div>
+                            <div class="match-info">
+                                <p><i class="far fa-calendar-alt"></i> 28 Oct 2025</p>
+                                <p><i class="far fa-clock"></i> 20:45 CET</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Santiago Bernabéu</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+            <footer>
+            <div class="footer-bar">
+                <p>&copy; 2025 Todos los derechos reservados - Sport Center</p>
+                <div class="footer-legal">
+                    <a href="#">Términos y condiciones</a>
+                    <a href="#">Política de privacidad</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>document.addEventListener('DOMContentLoaded', function() {
+    // 1. Filtrado de ligas por región
+    const filterButtons = document.querySelectorAll('.btn-filter');
+    const leagueCards = document.querySelectorAll('.league-card');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remover clase active de todos los botones
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Agregar clase active al botón clickeado
+            this.classList.add('active');
+            
+            const filterValue = this.getAttribute('data-filter');
+            
+            // Filtrar las tarjetas
+            leagueCards.forEach(card => {
+                const cardRegion = card.closest('[data-region]').getAttribute('data-region');
+                
+                if (filterValue === 'all' || cardRegion === filterValue) {
+                    card.closest('.col-md-6').style.display = 'block';
+                } else {
+                    card.closest('.col-md-6').style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // 2. Búsqueda de ligas
+    const leagueSearch = document.getElementById('leagueSearch');
+    const searchButton = document.querySelector('.btn-search');
+    
+    function performSearch() {
+        const searchTerm = leagueSearch.value.toLowerCase();
+        
+        leagueCards.forEach(card => {
+            const leagueName = card.querySelector('h3').textContent.toLowerCase();
+            const leagueCountry = card.querySelector('.league-country').textContent.toLowerCase();
+            
+            if (leagueName.includes(searchTerm) || leagueCountry.includes(searchTerm)) {
+                card.closest('.col-md-6').style.display = 'block';
+            } else {
+                card.closest('.col-md-6').style.display = 'none';
+            }
+        });
+    }
+    
+    // Evento para el botón de búsqueda
+    searchButton.addEventListener('click', performSearch);
+    
+    // Evento para tecla Enter en el input
+    leagueSearch.addEventListener('keyup', function(e) {
+        if (e.key === 'Enter') {
+            performSearch();
+        }
+    });
+
+    // 3. Efecto hover para las tarjetas de liga
+    leagueCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+            this.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+            this.style.transition = 'all 0.3s ease';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.05)';
+        });
+    });
+
+    // 4. Animación de scroll para el botón "Explorar Ligas"
+    const exploreButton = document.querySelector('.btn-explore');
+    
+    if (exploreButton) {
+        exploreButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            
+            window.scrollTo({
+                top: target.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // 5. Funcionalidad para las tarjetas de partidos
+    const matchCards = document.querySelectorAll('.match-card');
+    
+    matchCards.forEach(card => {
+        card.addEventListener('click', function() {
+            // Aquí podrías abrir un modal con más detalles del partido
+            alert(`Mostrar detalles del partido: ${this.querySelector('.teams').textContent.trim()}`);
+        });
+        
+        // Efecto hover para las tarjetas de partidos
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.02)';
+            this.style.transition = 'all 0.3s ease';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
+    });
+});
+
+// 7. Función para mostrar un modal de "Próximamente" para botones no implementados
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('btn-outline-primary') || 
+        e.target.classList.contains('btn-outline-danger')) {
+        e.preventDefault();
+        
+        // Crear modal dinámico
+        const modalHtml = `
+            <div class="modal fade" id="featureModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Próximamente</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center py-4">
+                            <i class="fas fa-tools fa-4x mb-3 text-primary"></i>
+                            <p>Esta funcionalidad estará disponible en una próxima actualización.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        // Insertar el modal en el DOM
+        document.body.insertAdjacentHTML('beforeend', modalHtml);
+        
+        // Mostrar el modal
+        const featureModal = new bootstrap.Modal(document.getElementById('featureModal'));
+        featureModal.show();
+        
+        // Eliminar el modal cuando se cierre
+        document.getElementById('featureModal').addEventListener('hidden.bs.modal', function() {
+            this.remove();
+        });
+    }
+});</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

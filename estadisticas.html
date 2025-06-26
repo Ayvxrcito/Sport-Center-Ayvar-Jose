@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadísticas Avanzadas de Fútbol | Sport Center</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="grid-container">
+        
+        <header class="header sticky-top">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="img/logo.png" alt="Logo Sport Center" class="logo-img">
+                    </a>
+
+                    <div class="d-flex align-items-center">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"><a class="nav-link" href="index.html">INICIO</a></li>
+                            <li class="nav-item"><a class="nav-link" href="ligas.html">LIGAS</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="estadisticas.html">ESTADÍSTICAS</a></li>
+                            <li class="nav-item"><a class="nav-link" href="transmisiones.html">TRANSMISIONES</a></li>
+                            <li class="nav-item"><a class="nav-link btn-subscribe" href="suscribir.html"
+                                    id="btnSuscribir">SUSCRIBIRSE</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <section class="stats-hero">
+            <div class="hero-content">
+                <h1>Estadísticas Avanzadas de Fútbol</h1>
+                <p class="lead">Analiza el rendimiento con datos en tiempo real y visualizaciones interactivas</p>
+                <div class="stats-filter">
+                    <select class="form-select" id="leagueFilter">
+                        <option value="all">Todas las ligas</option>
+                        <option value="premier">Premier League</option>
+                        <option value="laliga">La Liga</option>
+                        <option value="seriea">Serie A</option>
+                        <option value="bundesliga">Bundesliga</option>
+                    </select>
+                    <select class="form-select" id="seasonFilter">
+                        <option value="2023-2024">Temporada 2023-2024</option>
+                        <option value="2022-2023">Temporada 2022-2023</option>
+                        <option value="2024-2025">Temporada 2024-2025</option>
+                    </select>
+                    <button class="btn btn-primary" id="applyFilters">Aplicar Filtros</button>
+                </div>
+            </div>
+        </section>
+
+        
+        <main class="stats-container">
+            <div class="container">
+                
+                <ul class="nav nav-tabs stats-tabs" id="statsTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="goleadores-tab" data-bs-toggle="tab"
+                            data-bs-target="#goleadores" type="button" role="tab">Goleadores</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="asistentes-tab" data-bs-toggle="tab" data-bs-target="#asistentes"
+                            type="button" role="tab">Asistentes</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="equipos-tab" data-bs-toggle="tab" data-bs-target="#equipos"
+                            type="button" role="tab">Equipos</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="graficos-tab" data-bs-toggle="tab" data-bs-target="#graficos"
+                            type="button" role="tab">Gráficos</button>
+                    </li>
+                </ul>
+
+              
+                <div class="tab-content" id="statsTabContent">
+                    
+                    <div class="tab-pane fade show active" id="goleadores" role="tabpanel">
+                        <div class="stats-header">
+                            <h2>Tabla de Goleadores</h2>
+                            <div class="stats-actions">
+                                <div class="search-box">
+                                    <input type="text" id="searchGoals" placeholder="Buscar jugador...">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <button class="btn btn-outline-secondary" id="exportGoals">
+                                    <i class="fas fa-download"></i> Exportar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="stats-table-container">
+                            <table class="table stats-table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Jugador</th>
+                                        <th>Equipo</th>
+                                        <th>Goles</th>
+                                        <th>Partidos</th>
+                                        <th>Promedio</th>
+                                        <th>Detalle</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="goalsTableBody">
+                                    <!-- Datos cargados por JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="table-footer">
+                            <div class="table-pagination">
+                                <button class="btn btn-sm btn-outline-secondary" id="prevGoals">Anterior</button>
+                                <span id="goalsPageInfo">Página 1 de 5</span>
+                                <button class="btn btn-sm btn-outline-secondary" id="nextGoals">Siguiente</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="tab-pane fade" id="asistentes" role="tabpanel">
+                        <div class="stats-header">
+                            <h2>Tabla de Asistentes</h2>
+                            <div class="stats-actions">
+                                <div class="search-box">
+                                    <input type="text" id="searchAssists" placeholder="Buscar jugador...">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <button class="btn btn-outline-secondary" id="exportAssists">
+                                    <i class="fas fa-download"></i> Exportar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="stats-table-container">
+                            <table class="table stats-table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Jugador</th>
+                                        <th>Equipo</th>
+                                        <th>Asistencias</th>
+                                        <th>Partidos</th>
+                                        <th>Promedio</th>
+                                        <th>Detalle</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="assistsTableBody">
+                                    <!-- Datos cargados por JS tambien  -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="table-footer">
+                            <div class="table-pagination">
+                                <button class="btn btn-sm btn-outline-secondary" id="prevAssists">Anterior</button>
+                                <span id="assistsPageInfo">Página 1 de 5</span>
+                                <button class="btn btn-sm btn-outline-secondary" id="nextAssists">Siguiente</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="tab-pane fade" id="equipos" role="tabpanel">
+                        <div class="stats-header">
+                            <h2>Tabla de Clasificación</h2>
+                            <div class="stats-actions">
+                                <div class="search-box">
+                                    <input type="text" id="searchTeams" placeholder="Buscar equipo...">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <button class="btn btn-outline-secondary" id="exportTeams">
+                                    <i class="fas fa-download"></i> Exportar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="stats-table-container">
+                            <table class="table stats-table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Equipo</th>
+                                        <th>PJ</th>
+                                        <th>PG</th>
+                                        <th>PE</th>
+                                        <th>PP</th>
+                                        <th>GF</th>
+                                        <th>GC</th>
+                                        <th>DG</th>
+                                        <th>Puntos</th>
+                                        <th>Forma</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="teamsTableBody">
+                                    <!-- Datos cargados por JS X3 -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="table-footer">
+                            <div class="table-pagination">
+                                <button class="btn btn-sm btn-outline-secondary" id="prevTeams">Anterior</button>
+                                <span id="teamsPageInfo">Página 1 de 5</span>
+                                <button class="btn btn-sm btn-outline-secondary" id="nextTeams">Siguiente</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab de Gráficos -->
+                    <div class="tab-pane fade" id="graficos" role="tabpanel">
+                        <div class="stats-header">
+                            <h2>Visualizaciones Estadísticas</h2>
+                            <div class="chart-filters">
+                                <select class="form-select" id="chartType">
+                                    <option value="goals">Goleadores</option>
+                                    <option value="assists">Asistentes</option>
+                                    <option value="team-performance">Rendimiento de Equipos</option>
+                                    <option value="comparison">Comparación de Jugadores</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <canvas id="mainChart"></canvas>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="chart-info">
+                                        <h4 id="chartTitle">Top 5 Goleadores</h4>
+                                        <p id="chartDescription">Comparación de los máximos goleadores de la temporada</p>
+                                        <div class="chart-legend" id="chartLegend"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="secondary-charts">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <canvas id="secondaryChart1"></canvas>
+                                </div>
+                                <div class="col-md-6">
+                                    <canvas id="secondaryChart2"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comparador de Jugadores -->
+                <section class="player-comparator mt-5">
+                    <h2 class="section-title">Comparador de Jugadores</h2>
+                    <div class="comparator-container">
+                        <div class="player-select">
+                            <select class="form-select" id="player1">
+                                <option value="">Selecciona jugador 1</option>
+                            </select>
+                            <div class="player-preview" id="player1Preview">
+                                <div class="player-img"></div>
+                                <div class="player-stats">
+                                    <h5>Selecciona un jugador</h5>
+                                    <p>Aparecerán las estadísticas aquí</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vs-circle">
+                            <span>VS</span>
+                            <button class="btn btn-primary" id="comparePlayers">Comparar</button>
+                        </div>
+                        <div class="player-select">
+                            <select class="form-select" id="player2">
+                                <option value="">Selecciona jugador 2</option>
+                            </select>
+                            <div class="player-preview" id="player2Preview">
+                                <div class="player-img"></div>
+                                <div class="player-stats">
+                                    <h5>Selecciona un jugador</h5>
+                                    <p>Aparecerán las estadísticas aquí</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comparison-results" id="comparisonResults">
+                        <!-- Resultados de la comparación -->
+                    </div>
+                </section>
+
+                <!-- Noticias Relacionadas con Videos -->
+                <section class="related-news mt-5">
+    <h2 class="section-title">Noticias y Highlights</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="news-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/1ht0Et_CNHE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="news-content">
+                    <h4>Haaland marca su hat-trick número 10</h4>
+                    <p>El delantero noruego sigue rompiendo récords en la Premier League</p>
+                    <a href="#" class="read-more">Ver análisis completo</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="news-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/AEA4flfKTkE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="news-content">
+                    <h4>Mbappé anuncia su salida del PSG</h4>
+                    <p>El astro francés confirmó que no renovará con el club parisino</p>
+                    <a href="#" class="read-more">Ver conferencia completa</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="news-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/T9woWl6r9y0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="news-content">
+                    <h4>Bellingham: El mejor mediocampista</h4>
+                    <p>El inglés ha sido clave en el éxito del Real Madrid esta temporada</p>
+                    <a href="#" class="read-more">Ver highlights</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-bar">
+                <p>&copy; 2025 Todos los derechos reservados - Sport Center</p>
+                <div class="footer-legal">
+                    <a href="#">Términos y condiciones</a>
+                    <a href="#">Política de privacidad</a>
+                    <a href="#" id="apiDocs">API para desarrolladores</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modal para detalles de jugador -->
+    <div class="modal fade" id="playerModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="playerModalTitle">Detalles del Jugador</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="playerModalBody">
+                    <!-- Contenido cargado dinámicamente -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="js/stats.js"></script>
+    <script>
+        // Funciones generales que se usan en todas las páginas
+        document.addEventListener('DOMContentLoaded', function() {
+            // Activar el tooltip de Bootstrap si está cargado
+            if (typeof bootstrap !== 'undefined' && bootstrap.Tooltip) {
+                const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+                tooltipTriggerList.map(function(tooltipTriggerEl) {
+                    return new bootstrap.Tooltip(tooltipTriggerEl);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
