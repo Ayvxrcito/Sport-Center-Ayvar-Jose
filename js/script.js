@@ -12,7 +12,7 @@ document.getElementById('newsletterForm').addEventListener('submit', function(e)
         return;
     }
     
-    // Simular envío (en un caso real sería una petición AJAX)
+    // Simular envio (en un caso real sería una petición AJAX)
     setTimeout(() => {
         // Mostrar modal de éxito
         const successModal = new bootstrap.Modal(document.getElementById('successModal'));
@@ -27,7 +27,7 @@ document.getElementById('newsletterForm').addEventListener('submit', function(e)
     }, 800); // Pequeño retraso para simular procesamiento
 });
 
-// Función para mostrar errores de forma elegante
+// Funcion para mostrar errores de forma elegante
 function showError(message) {
     const errorToast = `
         <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">

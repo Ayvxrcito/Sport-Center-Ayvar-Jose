@@ -101,7 +101,7 @@ header {
     margin-bottom: 1.5rem;
     position: relative;
     padding-left: 1.5rem;
-    border-left: 3px solid #000000;
+    border-left: 3px solid #522525;
     
 }
 
@@ -418,16 +418,16 @@ nav ul li a:hover::after {
 }
 
 :root {
-    --primary-color: #c8102e; /* Rojo característico */
-    --secondary-color: #1a1a1a; /* Negro */
-    --accent-color: #ffffff; /* Blanco */
+    --primary-color: #c8102e; 
+    --secondary-color: #1a1a1a; 
+    --accent-color: #ffffff;
     --text-color: #333;
     --light-gray: #f8f8f8;
     --dark-gray: #555;
     --transition: all 0.3s ease;
 }
 
-/* ... (mantén todo el CSS anterior hasta el .carousel) ... */
+
 
 /* Ajustes para el carrusel */
 .carousel {
@@ -478,11 +478,26 @@ nav ul li a:hover::after {
 }
 
 /* Tarjetas destacadas */
+.section-header {
+  display: flex;
+  justify-content: center;
+}
+
+.section-title {
+  font-weight: bold;
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  
+  display: inline-block;
+}
+
+
 .highlight-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin: 2rem 0;
+     padding: 0 1rem; 
 }
 
 .highlight-card {
@@ -1477,7 +1492,7 @@ footer {
 
 /* Estilos generales para la página de estadísticas */
 .stats-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/stats-bg.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/transmisiones.jpg');
     background-size: cover;
     background-position: center;
     color: white;
