@@ -42,11 +42,17 @@
                 </div>
             </nav>
         </header>
-        <section class="stats-hero">
+       <section class="stats-hero">
+    <div class="container">
+        <div class="hero-content-wrapper">
+            <!-- Contenido de texto y filtros -->
             <div class="hero-content">
-                <h1>Estadísticas Avanzadas de Fútbol</h1>
-                <p class="lead">Analiza el rendimiento con datos en tiempo real y visualizaciones interactivas</p>
-                <div class="stats-filter">
+                <h1 class="animate__animated animate__fadeInDown">Estadísticas Avanzadas de Fútbol</h1>
+                <p class="lead animate__animated animate__fadeIn animate__delay-1s">
+                    Analiza el rendimiento con datos en tiempo real y visualizaciones interactivas
+                </p>
+                
+                <div class="stats-filter animate__animated animate__fadeInUp animate__delay-1s">
                     <select class="form-select" id="leagueFilter">
                         <option value="all">Todas las ligas</option>
                         <option value="premier">Premier League</option>
@@ -62,7 +68,22 @@
                     <button class="btn btn-primary" id="applyFilters">Aplicar Filtros</button>
                 </div>
             </div>
-        </section>
+            
+            <!-- Contenedor del video -->
+            <div class="hero-video-container animate__animated animate__fadeIn animate__delay-1s">
+                <div class="video-wrapper">
+                    <iframe 
+    src="https://www.youtube.com/embed/wpcKyur-kbI?controls=0&autoplay=1&mute=1&loop=1&playlist=wpcKyur-kbI" 
+    title="Análisis de fútbol" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+</iframe>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
         
         <main class="stats-container">
@@ -299,17 +320,18 @@
     <h2 class="section-title">Noticias y Highlights</h2>
     <div class="row">
         <div class="col-md-4">
-            <div class="news-card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/1ht0Et_CNHE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="news-content">
-                    <h4>Haaland marca su hat-trick número 10</h4>
-                    <p>El delantero noruego sigue rompiendo récords en la Premier League</p>
-                    <a href="#" class="read-more">Ver análisis completo</a>
-                </div>
-            </div>
+    <div class="news-card">
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/A3L4SY4rhug" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
+        <div class="news-content">
+            <h4>Perú queda eliminado del Mundial 2026</h4>
+            <p>La selección peruana se despide de las eliminatorias tras una campaña con altibajos en la Conmebol.</p>
+            <a href="https://www.youtube.com/watch?v=A3L4SY4rhug" target="_blank" class="read-more">Ver análisis completo</a>
+        </div>
+    </div>
+</div>
+
         <div class="col-md-4">
             <div class="news-card">
                 <div class="video-container">
