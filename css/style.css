@@ -535,44 +535,107 @@ nav ul li a:hover::after {
 }
 
 
-.newsletter {
-    background: linear-gradient(135deg, var(--primary-color), #a00d28);
-    color: white;
-    padding: 3rem;
-    margin: 4rem 0;
-    border-radius: 10px;
+/* Estilos para la sección de eventos */
+.upcoming-events {
+    padding: 2rem 0;
+    background-color: #f8f9fa;
+}
+
+.section-header {
     text-align: center;
-}
-
-.newsletter h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-}
-
-.newsletter p {
     margin-bottom: 2rem;
+}
+
+.section-title {
+    font-weight: 700;
+    color: #dc3545;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background-color: #dc3545;
+    bottom: -10px;
+    left: 25%;
+}
+
+.section-subtitle {
+    color: #6c757d;
     font-size: 1.1rem;
 }
 
-.newsletter .form-control {
-    padding: 0.8rem 1rem;
+.event-card {
     border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+    padding: 0 1rem; 
+    
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+}
+
+.event-card .card-img-top {
+    height: 180px;
+    object-fit: cover;
+}
+
+.event-date {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: rgba(220, 53, 69, 0.9);
+    color: white;
+    padding: 8px 12px;
     border-radius: 5px;
+    text-align: center;
+    z-index: 1;
 }
 
-.newsletter .btn-danger {
-    background-color: var(--secondary-color);
-    border: none;
-    padding: 0.8rem 2rem;
+.event-date .day {
+    display: block;
+    font-size: 1.5rem;
     font-weight: bold;
-    transition: var(--transition);
+    line-height: 1;
 }
 
-.newsletter .btn-danger:hover {
-    background-color: #000;
-    transform: translateY(-3px);
+.event-date .month {
+    display: block;
+    font-size: 0.9rem;
+    text-transform: uppercase;
 }
 
+.event-card .card-body {
+    padding: 1.5rem;
+}
+
+.event-card .card-title {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.event-card .card-text {
+    margin-bottom: 0.5rem;
+    color: #6c757d;
+}
+
+.event-card .card-text i {
+    margin-right: 8px;
+    color: #dc3545;
+}
+
+.btn-lg {
+    padding: 0.5rem 2rem;
+    font-weight: 600;
+}
 
 
 
@@ -595,22 +658,117 @@ nav ul li a:hover::after {
     }
 }
 
-@media (max-width: 768px) {
-    .carousel-item {
-        height: 40vh;
+
+@media (max-width: 1199.98px) {
+    .event-card .card-img-top {
+        height: 160px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .upcoming-events {
+        padding: 1.5rem 0;
     }
     
-    .newsletter {
-        padding: 2rem 1rem;
+    .section-title {
+        font-size: 1.8rem;
     }
     
-    .newsletter .form-control {
-        width: 100%;
-        margin-bottom: 1rem;
+    .event-card .card-body {
+        padding: 1.25rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .event-cards {
+        max-width: 600px;
+        margin: 0 auto;
     }
     
-    .newsletter .btn-danger {
-        width: 100%;
+    .event-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .event-card:last-child {
+        margin-bottom: 0;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .section-title:after {
+        height: 2px;
+        bottom: -8px;
+    }
+    
+    .btn-lg {
+        padding: 0.5rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .upcoming-events {
+        padding: 1rem 0;
+    }
+    
+    .section-header {
+        margin-bottom: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    .event-card .card-img-top {
+        height: 140px;
+    }
+    
+    .event-date {
+        top: 10px;
+        left: 10px;
+        padding: 6px 10px;
+    }
+    
+    .event-date .day {
+        font-size: 1.3rem;
+    }
+    
+    .event-date .month {
+        font-size: 0.8rem;
+    }
+    
+    .event-card .card-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .event-card .card-text {
+        font-size: 0.9rem;
+    }
+    
+    .event-card .btn {
+        font-size: 0.85rem;
+        padding: 0.25rem 0.75rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .section-title {
+        font-size: 1.3rem;
+    }
+    
+    .event-card .card-img-top {
+        height: 120px;
+    }
+    
+    .event-card .card-body {
+        padding: 1rem;
     }
 }
 
